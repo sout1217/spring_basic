@@ -14,6 +14,14 @@
         <log4j.version>2.10.0</log4j.version>
     </properties>
 
+    <!-- 멀티 프로젝트를 할 때 사용하는 parent 태그 -->
+    <!-- spring boot 를 부모로 삼아서 spring5 에서도 spring boot 기능을 사용할 수 있게 된다 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.RELEASE</version>
+    </parent>
+
     <!-- 의존성 설정 (라이브러리 사용하기) -->
     <dependencies>
         <dependency>
@@ -31,35 +39,26 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+        <!-- Spring MVC 사용하기 -->
+        <!-- 자바EE 서블릿 API 기반으로 한다 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mustache</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- 빌드 설정 -->
     <build>
         <finalName>messages</finalName>
         <plugins>
+            <!-- mvn spring-boot:run 을 이용하여 mvn install 필요성이 사라졌다 -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
-                            <archive>
-                                <manifest>
-                                    <mainClass>page_91.app.messages.Application</mainClass>
-                                </manifest>
-                            </archive>
-                            <!-- spring-context-5.0.3 jar 파일을 포함시켜야 하기 때문에 아래구문을 사용한다 -->
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
