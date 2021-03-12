@@ -1,0 +1,23 @@
+POST http://localhost:8080/messages/jdbc
+Content-Type: application/json
+
+{
+  "text": "jdbc here !"
+}
+###
+
+POST http://localhost:8080/messages/spring-jdbc
+Content-Type: application/json
+
+{
+  "text": "spring jdbc here !"
+}
+
+###
+
+POST http://localhost:8080/messages/hibernate
+Content-Type: application/json
+
+{
+  "text": "hibernate here !"
+}
