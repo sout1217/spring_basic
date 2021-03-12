@@ -1,0 +1,4 @@
+logging:
+  level:
+    root: info
+    page_110.app.messages.AuditingFilter: debug
