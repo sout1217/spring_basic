@@ -39,4 +39,16 @@ public class MessageEntity {
     public Date getCreatedDate() {
         return createdDate;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
 }
