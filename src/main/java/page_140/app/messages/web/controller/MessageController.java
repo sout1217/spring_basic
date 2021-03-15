@@ -52,12 +52,4 @@ public class MessageController {
 
         return ResponseEntity.ok(saved);
     }
-
-    @GetMapping("/")
-    public ResponseEntity<List<MessageEntity>> getMessages() {
-        List<MessageEntity> messages = messageService.getMessages();
-
-        return ResponseEntity.ok(messages);
-    }
-
 }

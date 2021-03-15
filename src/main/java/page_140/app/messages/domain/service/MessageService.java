@@ -60,4 +60,15 @@ public class MessageService {
     public List<MessageEntity> getMessages() {
         return repositoryUsingHibernate.getMessages();
     }
+
+    @Transactional
+    public MessageEntity saveMessage(String text) {
+        return repositoryUsingHibernate.saveMessage(new MessageEntity(text));
+    }
+
+    @Transactional
+    public void deleteMessage(Long id) {
+        MessageEntity messageEntity = repositoryUsingHibernate.findById(id);
+        repositoryUsingHibernate.deleteMessage(messageEntity);
+    }
 }

@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import page_140.app.messages.security.AuditingFilter;
 
 import javax.sql.DataSource;
@@ -13,7 +15,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableTransactionManagement
-public class AppConfig {
+public class AppConfig implements WebMvcConfigurer {
 
     private DataSource dataSource;
 
@@ -46,5 +48,14 @@ public class AppConfig {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
+    }
+
+    // static 자원들을 빌드하기 위함
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/static/")
+                .setCachePeriod(20)
+        ;
     }
 }

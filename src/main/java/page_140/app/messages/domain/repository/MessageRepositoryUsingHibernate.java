@@ -39,4 +39,16 @@ public class MessageRepositoryUsingHibernate {
         Query<MessageEntity> query = session.createQuery(hql, MessageEntity.class);
         return query.list();
     }
+
+    public MessageEntity findById(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        String hql = "from MessageEntity as me Where me.id = " + id;
+        Query<MessageEntity> query = session.createQuery(hql, MessageEntity.class);
+        return query.getSingleResult();
+    }
+
+    public void deleteMessage(MessageEntity messageEntity) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(messageEntity);
+    }
 }
