@@ -5,10 +5,10 @@ spring:
     password: root0327
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
-    show-sql: true
     open-in-view: false
 
 logging:
   level:
     root: info
     page_110.app.messages.AuditingFilter: debug
+    org.hibernate.SQL: debug # hibernate 를 이용한 sql 문을 출력 해준다

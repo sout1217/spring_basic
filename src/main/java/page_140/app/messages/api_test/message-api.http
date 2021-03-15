@@ -1,0 +1,20 @@
+POST http://localhost:8080/messages/hibernate
+Content-Type: application/json
+
+{
+  "text": "hibernate here !"
+}
+
+###
+
+POST http://localhost:8080/messages/hibernate-norollback
+Content-Type: application/json
+
+{
+  "text": "hibernate here ! - no rollback"
+}
+
+###
+
+# hql 을 이용한 GET Messages
+GET http://localhost:8080/messages/
