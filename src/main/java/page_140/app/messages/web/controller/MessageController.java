@@ -4,11 +4,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import page_140.app.messages.domain.service.MessageService;
 import page_140.app.messages.domain.dto.MessageData;
 import page_140.app.messages.domain.entity.MessageEntity;
-
-import java.util.List;
+import page_140.app.messages.domain.service.MessageService;
 
 @Controller
 @RequestMapping("/messages")
