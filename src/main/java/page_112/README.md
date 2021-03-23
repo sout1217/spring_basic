@@ -1,3 +1,5 @@
+# Spring JDBC vs JPA
+
 ### JDBC (Java Database Connectivity)
 **JDBC API** 는 관계형 데이터베이스에 저장된 데이터에 접근하는 방법을 정의한다
 

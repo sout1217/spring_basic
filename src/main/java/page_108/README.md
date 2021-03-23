@@ -1,3 +1,4 @@
+Spring Template Engine
 ---
 MVC 패턴에서 **C는 컨트롤러(Controller)**, **V 는 HTML 마크업이 위치하는 뷰(View)**다
 그리고 M은 컨트롤러가 생성하고 HTTP 응답을 통해 클라이언트에 전송되어 뷰가 최종결과를 렌더링하는 데 사용할 수 있는 **데이터를 포함하는 모델(Model)**
